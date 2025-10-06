@@ -41,14 +41,14 @@ class Matcher_speakers():
         return speaker_map
     
 
-    def match(self, sim_threshold=0.7):
+    def match(self, sim_threshold=0.75):
         """
         Matchear speakers con los guardados. Si la similitud es menor que sim_threshold, se ignora el speaker.
         """
         speaker_id_map = {}
         for emb, speaker in self.speaker_map.items():
             emb_np = np.array(emb)
-            mp_uid, sim = utils.find_closest_speaker(emb_np, self.emb_matrix, self.mp_uids, self.embs_dict)
+            mp_uid, sim = utils.find_closest_speaker(emb_np, self.emb_matrix, self.mp_uids)
             if sim > sim_threshold:
                 speaker_id_map[speaker] = mp_uid
 
