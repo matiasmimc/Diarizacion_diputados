@@ -21,9 +21,9 @@ class Matcher_speakers():
             emb = seg.get("embedding")
             if emb is None: 
                 continue
-        # Convertir el array a tupla (inmutable) para usar como clave
-        emb_key = tuple(emb.tolist())
-        embedding_groups[emb_key].append(seg)
+            # Convertir el array a tupla (inmutable) para usar como clave
+            emb_key = tuple(emb.tolist())
+            embedding_groups[emb_key].append(seg)
 
         print(f"Total de embeddings únicos: {len(embedding_groups)}")
 
