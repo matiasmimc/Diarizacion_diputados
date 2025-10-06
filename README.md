@@ -1,0 +1,1 @@
+Pipeline para transcribir videos de youtube, con predicción de turnos de habla e identificacion de hablantes conocidos
