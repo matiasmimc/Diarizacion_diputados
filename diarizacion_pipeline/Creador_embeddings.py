@@ -12,7 +12,7 @@ import json
     Crear y actualizar diccionario de embeddings de parlamentarios
 '''
 class Creador_embeddings:
-    def __init__(self, all_segments, path_mp_uids_csv: str, path_diputados_embeddings=None|str):
+    def __init__(self, all_segments, path_mp_uids_csv: str, path_diputados_embeddings=None):
         self.all_segments = all_segments
         self.all_valid_segments = [seg for seg in self.all_segments if seg['embedding'] is not None]
         self.cluster_dict = None

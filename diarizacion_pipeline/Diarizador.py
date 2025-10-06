@@ -13,12 +13,13 @@ import os
     Puede descargarse, con la Api de YouTube (que limita las solicitudes), o cargarse desde un archivo local
 """
 class Diarizador:
-    def __init__(self, device='cpu', language_code='es'):
+    def __init__(self, hugginface_token, device='cpu', language_code='es'):
         self.device = device
         self.language_code = language_code
         self. text_segments = {}
         self.audio_file = None
         self.chunk_files = []
+        self.token = hugginface_token
 
 
     def cargar_transcricion(self, path: str):
@@ -75,7 +76,7 @@ class Diarizador:
         self._chunking(chunk_length_ms)
         print("Cargando WhisperX...")
         align_model, metadata = whisperx.load_align_model(language_code="en", device=self.device)
-        diarize_model = DiarizationPipeline(use_auth_token="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", device=self.device)
+        diarize_model = DiarizationPipeline(use_auth_token=self.token, device=self.device)
 
         all_segments = []
         time_offset = 0.0
