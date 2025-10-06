@@ -1,6 +1,6 @@
+from diarizacion_pipeline import utils
 from collections import defaultdict
 import numpy as np
-import utils
 
 '''
     Fase online
