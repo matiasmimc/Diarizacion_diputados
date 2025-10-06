@@ -61,4 +61,4 @@ class Matcher_speakers():
             seg["speaker"] = self.embs_dict[mp_uid]["nombre_completo"]
             seg["mp_uid"] = mp_uid
 
-        return self.segments_dialogo
+        return segments_dialogo
