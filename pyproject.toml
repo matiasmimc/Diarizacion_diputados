@@ -55,7 +55,7 @@ dependencies = [
     "multidict (==6.6.4)",
     "networkx (==3.5)",
     "nltk (==3.9.2)",
-    "numpy (==2.2.0)",
+    "numpy",
     "omegaconf (==2.3.0)",
     "onnxruntime (==1.23.0)",
     "optuna (==4.5.0)",
