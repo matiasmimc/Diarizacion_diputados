@@ -83,3 +83,14 @@ def numpy_to_python(obj):
     if isinstance(obj, (np.int32, np.int64)):
         return int(obj)
     raise TypeError(f"Type {type(obj)} not serializable")
+
+
+def load_embeddings(embs_dict):
+    """
+    Cargar embeddings desde JSON, convertir listas a arrays
+    """
+    for key, value in embs_dict.items():
+        value["embedding"] = np.array(value["embedding"])
+        value["embeddings_matrix"] = np.array(value["embeddings_matrix"])
+
+    return embs_dict
