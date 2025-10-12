@@ -33,7 +33,7 @@ class Creador_embeddings:
         # --- Clustering global para speakers consistentes ---
         embeddings_matrix = np.vstack([seg["embedding"] for seg in self.all_segments if seg['embedding'] is not None])
 
-        clustering = AgglomerativeClustering(n_clusters=37).fit(embeddings_matrix)
+        clustering = AgglomerativeClustering(n_clusters=n_clusters).fit(embeddings_matrix)
         labels = clustering.labels_
 
         # Asignar a speaker labels consistentes
