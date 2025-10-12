@@ -73,6 +73,7 @@ class Creador_embeddings:
         '''
         speakers_list = [frase['speaker'] for frase in self.all_segments]
         speakers_uniq = list(set(speakers_list))
+        speakers_uniq.remove("Unknown")
         return sorted(speakers_uniq, key=lambda s: int(s.split("_")[1]))
     
 
