@@ -73,7 +73,7 @@ class Creador_embeddings:
         '''
         speakers_list = [frase['speaker'] for frase in self.all_segments]
         speakers_uniq = list(set(speakers_list))
-        return sorted(speakers_uniq)
+        return sorted(speakers_uniq, key=lambda s: int(s.split("_")[1]))
     
 
     def get_segments_dialogo(self):
