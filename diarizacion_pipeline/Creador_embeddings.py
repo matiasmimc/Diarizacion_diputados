@@ -5,6 +5,7 @@ from random import sample
 import pandas as pd
 import numpy as np
 import json
+import copy
 
 
 '''
@@ -16,7 +17,7 @@ class Creador_embeddings:
         self.all_segments = all_segments
         self.all_valid_segments = [seg for seg in self.all_segments if seg['embedding'] is not None]
         self.cluster_dict = None
-        self.segments_dialogo = utils.postprocesar_segmentos(self.all_valid_segments)
+        self.segments_dialogo = utils.postprocesar_segmentos(copy.deepcopy(self.all_valid_segments))
         self.diputados_embeddings = None
         self.path_mp_uids_csv = path_mp_uids_csv
         self.path_diputados_embeddings = path_diputados_embeddings
