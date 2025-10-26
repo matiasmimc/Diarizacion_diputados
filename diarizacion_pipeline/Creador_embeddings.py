@@ -146,6 +146,13 @@ class Creador_embeddings:
         return diputados_embeddings
     
 
+    def get_transcripcion(self, speakers_dict: dict):
+        segments_dialogo = self.get_segments_dialogo()
+        for seg in segments_dialogo:
+            seg["speaker"] = speakers_dict.get(seg["speaker"], seg["speaker"])
+        return segments_dialogo
+    
+
     def exportar_diccionario_embeddings(self, ouput_path):
         with open(ouput_path, "w", encoding="utf-8") as f:
             json.dump(self.diputados_embeddings, f, ensure_ascii=False, indent=2, default=utils.numpy_to_python)
