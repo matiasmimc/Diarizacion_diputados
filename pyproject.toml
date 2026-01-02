@@ -101,7 +101,7 @@ dependencies = [
     "tensorboardx (==2.6.4)",
     "threadpoolctl (==3.6.0)",
     "tokenizers (==0.22.1)",
-    "torch (==2.8.2)",
+    "torch (==2.2.2)",
     "torchvision (==0.17.2)",
     "torch-audiomentations (==0.12.0)",
     "torch-pitch-shift (==1.2.5)",
