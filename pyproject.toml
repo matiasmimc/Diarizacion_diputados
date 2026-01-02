@@ -102,7 +102,7 @@ dependencies = [
     "threadpoolctl",
     "tokenizers>=0.14,<0.23",
     "torch",
-    "torchvision (==0.17.2)",
+    "torchvision>=0.17.2",
     "torch-audiomentations",
     "torch-pitch-shift",
     "torchaudio",
