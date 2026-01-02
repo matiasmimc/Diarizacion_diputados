@@ -76,7 +76,7 @@ dependencies = [
     "pyparsing",
     "pyreadline3",
     "python-dateutil",
-    "pytorch-lightning",
+    "pytorch-lightning>=2.0,<2.6",
     "pytorch-metric-learning",
     "pytz",
     "pyyaml",
