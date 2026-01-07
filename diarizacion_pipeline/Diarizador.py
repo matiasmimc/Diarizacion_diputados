@@ -75,7 +75,7 @@ class Diarizador:
     def diarizar(self, chunk_length_ms=(10 * 60 * 1000)):
         self._chunking(chunk_length_ms)
         print("Cargando WhisperX...")
-        align_model, metadata = whisperx.load_align_model(language_code="en", device=self.device)
+        align_model, metadata = whisperx.load_align_model(language_code="es", device=self.device)
         diarize_model = DiarizationPipeline(use_auth_token=self.token, device=self.device)
 
         all_segments = []
